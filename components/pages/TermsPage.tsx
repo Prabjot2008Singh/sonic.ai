@@ -1,18 +1,14 @@
 import React from 'react';
 import PageWrapper from './PageWrapper';
 
-interface TermsPageProps {
-  onBack: () => void;
-}
-
-const TermsPage: React.FC<TermsPageProps> = ({ onBack }) => {
+const TermsPage: React.FC = () => {
   return (
-    <PageWrapper title="Terms and Conditions" onBack={onBack}>
+    <PageWrapper title="Terms and Conditions">
       <h2>1. Introduction</h2>
-      <p>Welcome to Sonic.AI ("we", "our", "us"). These Terms and Conditions govern your use of our application. By using Sonic.AI, you agree to these terms in full. If you disagree with these terms or any part of these terms, you must not use our application.</p>
+      <p>Welcome to Sonic AI ("we", "our", "us"). These Terms and Conditions govern your use of our application. By using Sonic AI, you agree to these terms in full. If you disagree with these terms or any part of these terms, you must not use our application.</p>
       
       <h2>2. License to Use Application</h2>
-      <p>Unless otherwise stated, we own the intellectual property rights for all material on Sonic.AI. All intellectual property rights are reserved. You may view and/or print pages from the app for your own personal use subject to restrictions set in these terms and conditions.</p>
+      <p>Unless otherwise stated, we own the intellectual property rights for all material on Sonic AI. All intellectual property rights are reserved. You may view and/or print pages from the app for your own personal use subject to restrictions set in these terms and conditions.</p>
       
       <h2>3. Acceptable Use</h2>
       <p>You must not use our application in any way that causes, or may cause, damage to the application or impairment of the availability or accessibility of the application; or in any way which is unlawful, illegal, fraudulent, or harmful.</p>

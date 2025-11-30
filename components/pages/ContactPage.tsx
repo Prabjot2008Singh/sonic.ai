@@ -1,15 +1,11 @@
 import React from 'react';
 import PageWrapper from './PageWrapper';
 
-interface ContactPageProps {
-  onBack: () => void;
-}
-
-const ContactPage: React.FC<ContactPageProps> = ({ onBack }) => {
+const ContactPage: React.FC = () => {
   return (
-    <PageWrapper title="Contact Us" onBack={onBack}>
+    <PageWrapper title="Contact Us">
       <h2>Get in Touch</h2>
-      <p>We'd love to hear from you! Whether you have a question, feedback, or a song suggestion, please don't hesitate to reach out. We are always looking for ways to improve Sonic.AI and make it a better experience for our users.</p>
+      <p>We'd love to hear from you! Whether you have a question, feedback, or a song suggestion, please don't hesitate to reach out. We are always looking for ways to improve Sonic AI and make it a better experience for our users.</p>
       
       <h3>General Inquiries & Support</h3>
       <p>For general questions or if you need help with the app, please email our support team. We'll do our best to get back to you within 48 hours.</p>
