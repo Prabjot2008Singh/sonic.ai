@@ -21,6 +21,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, onLanguageConfir
   const isUser = message.sender === 'user';
 
   const renderContent = () => {
+    // FIX: Corrected typo from `onLanguageconfirm` to `onLanguageConfirm`.
     if (message.type === 'language-selection' && !isLanguageSelectionDone && onLanguageConfirm) {
         return (
           <div id="language-selector-container">
@@ -39,7 +40,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, onLanguageConfir
               <button
                 key={mood}
                 onClick={() => onQuickMoodSelect(mood)}
-                className="px-4 py-2 rounded-full bg-white/30 dark:bg-gray-800/60 text-gray-800 dark:text-gray-100 border border-gray-300 dark:border-gray-600 text-xs font-semibold hover:bg-white/50 dark:hover:bg-gray-800/90 transition-all transform hover:scale-105 shadow capitalize whitespace-nowrap"
+                className="px-3 py-1 rounded-full bg-white/30 dark:bg-gray-800/60 text-gray-800 dark:text-gray-100 border border-gray-300 dark:border-gray-600 text-xs font-semibold hover:bg-white/50 dark:hover:bg-gray-800/90 transition-all transform hover:scale-105 shadow capitalize whitespace-nowrap"
               >
                 {mood}
               </button>
@@ -53,7 +54,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, onLanguageConfir
       return (
         <div>
           <p className="mb-3 whitespace-pre-wrap text-sm sm:text-base">{message.text}</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
+          <div className="grid grid-cols-3 gap-3 mt-2">
             {message.songs.map((song) => {
                 const isQueued = queue.some(s => s.title === song.title && s.artist === song.artist);
                 return (
@@ -64,8 +65,8 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, onLanguageConfir
                   >
                     <div className="flex justify-between items-start w-full">
                       <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm sm:text-base">{song.title}</p>
-                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">{song.artist}</p>
+                        <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm">{song.title}</p>
+                        <p className="text-xs text-gray-600 dark:text-gray-300">{song.artist}</p>
                       </div>
                       <div className="flex items-center -mr-2 -mt-1 pl-2">
                           <button

@@ -19,10 +19,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, queueCount, onOpenQueue, onOp
   ];
   
   const secondaryNavItems = [
-    { label: 'About', icon: <InfoIcon className="w-5 h-5" />, action: () => onNavigate('about') },
-    { label: 'Terms', icon: <FileTextIcon className="w-5 h-5" />, action: () => onNavigate('terms') },
-    { label: 'Privacy', icon: <FileTextIcon className="w-5 h-5" />, action: () => onNavigate('privacy') },
-    { label: 'Contact', icon: <MailIcon className="w-5 h-5" />, action: () => onNavigate('contact') },
+    { label: 'About', action: () => onNavigate('about') },
+    { label: 'Terms', action: () => onNavigate('terms') },
+    { label: 'Privacy', action: () => onNavigate('privacy') },
+    { label: 'Contact', action: () => onNavigate('contact') },
   ];
 
   return (
@@ -64,13 +64,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, queueCount, onOpenQueue, onOp
 
         <div className={`pt-4 mt-4 border-t border-gray-200 dark:border-gray-700 ${!isOpen && 'opacity-0'}`}>
              <ul className="space-y-1">
-              {secondaryNavItems.map(({ label, icon, action }) => (
+              {secondaryNavItems.map(({ label, action }) => (
                 <li key={label}>
                   <button
                     onClick={action}
                     className="w-full flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors group"
                   >
-                    {icon}
                     <span className={`ml-3 whitespace-nowrap transition-opacity duration-200 ${!isOpen && 'opacity-0'}`}>{label}</span>
                   </button>
                 </li>
@@ -90,7 +89,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, queueCount, onOpenQueue, onOp
           title={isOpen ? '' : 'Settings'}
           className="w-full flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors group"
         >
-          <SettingsIcon className="w-5 h-5" />
           <span className={`ml-3 whitespace-nowrap transition-opacity duration-200 ${!isOpen && 'opacity-0'}`}>Settings</span>
         </button>
       </div>
